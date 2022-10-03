@@ -31,9 +31,8 @@ def capicua(lista):
 	return capicua(lista[1:-1])
 
 #Exercicio 1.7
-def explode(lista):
-	if not lista: return lista
-	return lista[:1][0] + explode(lista[1:])
+def concat_listas(lista):
+	pass
 
 #Exercicio 1.8
 def substitui(lista, original, novo):
@@ -52,6 +51,11 @@ def junta_ordenado(lista1, lista2):
 	else:
 		return lista2[:1] + junta_ordenado(lista1, lista2[1:])
 	
+
+#Exercicio 1.10
+def lista_subconjuntos(lista):
+	pass
+
 
 #Exercicio 2.1
 def separar(lista):

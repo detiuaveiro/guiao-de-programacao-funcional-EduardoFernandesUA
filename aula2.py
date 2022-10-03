@@ -1,13 +1,13 @@
 from functools import reduce
 
 #Exercicio 4.1
-impar = lambda num:  num%2==1
+impar = lambda x: x % 2 != 0 
 
 #Exercicio 4.2
-positivo = lambda num: num>=0
+positivo = lambda x: x > 0 and x != 0 
 
 #Exercicio 4.3
-comparar_modulo = lambda x,y: abs(x)<abs(y)
+comparar_modulo = lambda a, b: abs(a) < abs(b) 
 
 #Exercicio 4.4
 from math import atan, sqrt, pi
@@ -18,8 +18,16 @@ ex5 = lambda f,g,h: lambda x,y,z: h(f(x,y), g(y,z))
 
 #Exercicio 4.6
 def quantificador_universal(lista, f):
-    if not lista: return None
-    return map(lambda elem: f(elem), lista)
+    if lista == []:
+        return True
+
+    return f(lista[0]) and quantificador_universal(lista[1:], f)
+
+def subconjunto(lista1, lista2):
+    if lista1 == []:
+        return True
+
+    return lista1[0] in lista2 and subconjunto(lista1[1:], lista2)
 
 #Exercicio 4.9
 def ordem(lista, f):
